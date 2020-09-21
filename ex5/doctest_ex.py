@@ -1,8 +1,15 @@
 def string_interleave(s1, s2):
-    """
-    >>> string_interleave("abc", "mnopq") 
-    'manbocpq'
+    """[summary]
 
+    Args:
+        s1 ([string]): [some word]
+        s2 ([string]): [someword]
+
+    Returns:
+        [string]: [s1 swap with s2 or s2 swap with s1]
+
+     >>> string_interleave("abc", "mnopq") 
+    'manbocpq'
     >>> string_interleave("mnopq", "abc") 
     'manbocpq'
     >>> string_interleave("Hello", "Sawasdee Thailand") 
@@ -19,7 +26,3 @@ def string_interleave(s1, s2):
             s2 = s2[:2*i+1] + s1[i] + s2[2*i+1:]
 
         return s2
-
-
-# def selective_sum(n, k):
-print(string_interleave("abc", "mnopq"))
