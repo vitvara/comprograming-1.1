@@ -36,19 +36,33 @@ def checkwin(board, turn):
 
 
 turn = 'X'
+indexlist = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 for i in range(9):
     printBoard(the_num_Board)
     print()
     printBoard(theBoard)
     print('Turn for ' + turn + '. Move on which space?')
-    move = input()
-    theBoard[move] = turn
+    while True:
+        move = input()
+        try:
+            o = int(move)
+
+        except ValueError:
+            print("Incrorect type")
+            continue
+        try:
+            c = indexlist[o-1]
+            break
+        except IndexError:
+            print("Type number 1-9 ")
+            continue
+        theBoard[move] = turn
     if turn == 'X':
         theBoard[move] = "X"
         checkwin(theBoard, turn)
         turn = 'O'
 
-    else:
+    elif turn == "O":
         theBoard[move] = "O"
         checkwin(theBoard, turn)
         turn = 'X'
