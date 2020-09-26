@@ -53,18 +53,18 @@ for i in range(9):
         move = input()
         try:
             o = int(move)
-
         except ValueError:
             print("Incrorect type")
             continue
-        try:
-            c = indexlist[o-1]
-            break
-        except IndexError:
-            print("Type number 1-9 ")
+        if o not in range(1, 10):
+            print("Index out of range")
+            continue
+        if "X" in theBoard[move] or "O" in theBoard[move]:
+            print("This number is already used")
             continue
         theBoard[move] = turn
-        checkwin(theBoard, turn)
+        break
+    checkwin(theBoard, turn)
     if turn == 'X':
         turn = 'O'
     elif turn == "O":
