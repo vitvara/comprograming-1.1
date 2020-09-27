@@ -64,11 +64,13 @@ for i in range(9):
             continue
         theBoard[move] = turn
         break
+
     checkwin(theBoard, turn)
     if turn == 'X':
         turn = 'O'
     elif turn == "O":
         turn = 'X'
-
+    if i == 8:
+        print("Draw!")
 
 printBoard(theBoard)
