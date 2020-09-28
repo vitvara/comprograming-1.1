@@ -44,4 +44,23 @@ def dup_elements(l):
     print(return_list)
 
 
-dup_elements([1, 3, 3, 4, 2, 5, 8, 5, 6, 7])
+def count_unique_elements(l):
+    """
+    >>> count_unique_elements([1, 3, 3, 4, 2, 5, 8, 5, 6, 7])
+    6
+    >>> count_unique_elements([3, 3, 3, 3])
+    0
+    >>> count_unique_elements([3, 3, 1, 3, 3, 1])
+    0
+    >>> count_unique_elements([5, 3, 1, 2, 4, 10])
+    6
+    """
+
+    count = 0
+    for i in group_elements(l):
+        if len(i) == 1:
+            count += 1
+    print(count)
+
+
+count_unique_elements([1, 3, 3, 4, 2, 5, 8, 5, 6, 7])
