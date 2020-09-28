@@ -34,6 +34,3 @@ def circles_overlapping(x1, y1, x2, y2, r):
         print(True)
         return None
     print(False)
-
-
-circles_overlapping(1, 1, 4, 5, 3)
