@@ -23,14 +23,6 @@ def printBoard(board):
 
 
 def checkwin(board, turn):
-    """Check player win
-
-    Args:
-        lx ([type]): [description]
-        lo ([type]): [description]1
-    >>> checwin([1,2,3], [2,4,5])
-    X win1
-    """
     for i in check_list:
         if board[f"{i[0]}"] == " " or board[f"{i[1]}"] == " " or board[f"{i[2]}"] == " ":
             continue
@@ -64,7 +56,6 @@ for i in range(9):
             continue
         theBoard[move] = turn
         break
-
     checkwin(theBoard, turn)
     if turn == 'X':
         turn = 'O'
