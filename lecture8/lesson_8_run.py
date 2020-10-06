@@ -9,6 +9,6 @@ fin.close()
 
 for word in word_list:
     print(lesson_8.is_abecedarian(word))
-
+    lesson_8.uses_only(word)
     pass
     # your code here
